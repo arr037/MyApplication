@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\Rajdhani-Bold.ttf" />
+      <None Remove="Fonts\Rajdhani-Medium.ttf" />
+      <None Remove="Fonts\Rajdhani-Regular.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\Roboto-Medium.ttf" />
+      <Resource Include="Fonts\Roboto-Medium.ttf" />
+      <None Remove="Fonts\Roboto-Regular.ttf" />
+      <Resource Include="Fonts\Roboto-Regular.ttf" />
+      <None Remove="Fonts\Roboto-Bold.ttf" />
+      <Resource Include="Fonts\Roboto-Bold.ttf" />
+      <None Remove="Fonts\Roboto-Italic.ttf" />
+      <Resource Include="Fonts\Roboto-Italic.ttf" />
+      <None Remove="Fonts\Roboto-Light.ttf" />
+      <Resource Include="Fonts\Roboto-Light.ttf" />
+      <None Remove="Fonts\Roboto-Thin.ttf" />
+      <Resource Include="Fonts\Roboto-Thin.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+      <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    </ItemGroup>
+
+</Project>

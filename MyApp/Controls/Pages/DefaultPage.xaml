@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="MyApp.Controls.Pages.DefaultPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MyApp.Controls.Pages"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" TextAlignment="Center"> 
+                <Run FontSize="{StaticResource LargeFontSize}" Text="Добро пожаловать в программу"/>
+                <LineBreak />
+                <Run Text="MyApplication" FontSize="{StaticResource VeryLargeFontSize}"  FontFamily="{StaticResource Roboto-Medium}"/>
+            </TextBlock>
+        
+            <TextBlock Margin="0 5" Grid.Row="1" Text="О программе" FontSize="{StaticResource MiniFontSize}" FontFamily="{StaticResource Roboto-Regular}"/>
+        
+            <TextBlock TextWrapping="Wrap" Grid.Row="2" FontSize="{StaticResource MiniFontSize}" FontFamily="{StaticResource Roboto-Light}">
+                <Run Text="Данная программа предназначена для быстрого доступа к данным от различных сайтов и для быстрого старта различных программ" />
+            </TextBlock>
+        
+            <TextBlock Margin="0 10" TextWrapping="Wrap" HorizontalAlignment="Right" Grid.Row="3" FontSize="{StaticResource MiniFontSize}" FontFamily="{StaticResource Roboto-Light}">
+                <Run Text="Разработчик программы: "  FontFamily="{StaticResource Roboto-Regular}"/>
+                <Run Text="Ахметов Руслан" />
+            </TextBlock>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

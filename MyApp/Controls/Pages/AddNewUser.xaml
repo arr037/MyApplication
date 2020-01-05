@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="MyApp.Controls.Pages.AddNewUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MyApp.Controls.Pages"
+             xmlns:pagesViewModels="clr-namespace:MyApp.ViewModel.PagesViewModels"
+             xmlns:converter="clr-namespace:MyApp.Converter"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <UserControl.Resources>
+        <converter:StringToBrush x:Key="StringToBrush"/>
+    </UserControl.Resources>
+    
+    <UserControl.DataContext>
+        
+        <pagesViewModels:AddNewUserViewModel />
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="Auto"/>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="0" Text="Добавить нового пользователя" Style="{StaticResource BoldStyle}"/>
+        
+        <Border Margin="0 5" Grid.ColumnSpan="2" Grid.Row="1" CornerRadius="2" Height="2" Background="{StaticResource BackgroundLightBlueBrush}" />
+        
+        <TextBlock Text="Имя:" Grid.Column="0" Grid.Row="2" Style="{StaticResource BaseTextBlock}"/>
+        <TextBlock Text="Фамилия:" Grid.Column="0" Grid.Row="3" Style="{StaticResource BaseTextBlock}"/>
+        
+        <TextBlock Text="Цвет фона:" Grid.Column="0" Grid.Row="4" Style="{StaticResource BaseTextBlock}"/>
+        
+        <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Style="{StaticResource BaseTextBox}"/>
+        <TextBox Text="{Binding Surname,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" Style="{StaticResource BaseTextBox}"/>
+        
+        <ListBox SelectedItem="{Binding SelectedColor}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Column="1" Grid.Row="4" ItemsSource="{Binding Colors}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel  HorizontalAlignment="Left" Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        HorizontalAlignment="Center"
+                        Background="{Binding Converter={StaticResource StringToBrush}}"
+                        Width="30"
+                        Height="30"
+                        Margin="0 3"
+                        CornerRadius="30">
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <!-- <Button Command="{Binding SelectImage}" Grid.Column="1" Grid.Row="4" Content="{Binding FilePath}" Style="{StaticResource DefaultButtonStyle}"/> -->
+        
+        <Button Command="{Binding AddToCollection}" Grid.Column="1" Grid.Row="5" Content="Добавить пользователя" Style="{StaticResource DefaultButtonStyle}"/>
+        
+        
+        
+    </Grid>
+</UserControl>

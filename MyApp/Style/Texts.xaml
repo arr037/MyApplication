@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="TextBlock" x:Key="TitleTextBlock">
+       <Setter Property="FontSize" Value="{StaticResource LargeFontSize}" />
+       <Setter Property="FontFamily" Value="{StaticResource Roboto-Bold}" />
+       <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteColorBrush}" />
+       <Setter Property="Margin" Value="16 2" />
+       <Setter Property="HorizontalAlignment" Value="Center" />
+       <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <Style TargetType="TextBox" x:Key="FindTextBox">
+        <Setter Property="FontSize" Value="{StaticResource LMiniFontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto-Medium}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayColorBrush}" />
+        <Setter Property="Padding" Value="5 3" />
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="BoldStyle">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto-Medium}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayColorBrush}" />
+        <Setter Property="FontSize" Value="{StaticResource VeryLargeFontSize}" />
+        <Setter Property="Margin" Value="0 5 0 0"></Setter>
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="BaseTextBlock">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto-Regular}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayColorBrush}" />
+        <Setter Property="FontSize" Value="{StaticResource LMiniFontSize}" />
+        <Setter Property="Margin" Value="0 3" />
+        <Setter Property="Padding" Value="3"></Setter>
+    </Style>
+    <Style TargetType="TextBox" x:Key="BaseTextBox">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto-Regular}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayColorBrush}" />
+        <Setter Property="FontSize" Value="{StaticResource LMiniFontSize}" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Margin" Value="0 3"></Setter>
+    </Style>
+    
+</ResourceDictionary>
